@@ -1,20 +1,23 @@
 import fc from 'fast-check';
 
-// Code under test
-const contains = (text: string, pattern: string) => text.indexOf(pattern) >= 0;
+function add(a: number, b: number) {
+  return a + b;
+}
 
-// Properties
-describe('properties', () => {
-  // string text always contains itself
-  it('should always contain itself', () => {
-    fc.assert(fc.property(fc.string(), (text) => contains(text, text)));
-  });
-  // string a + b + c always contains b, whatever the values of a, b and c
-  it('should always contain its substrings', () => {
+describe('add', () => {
+  it('should be commutative', () => {
     fc.assert(
-      fc.property(fc.string(), fc.string(), fc.string(), (a, b, c) => {
-        // Alternatively: no return statement and direct usage of expect or assert
-        return contains(a + b + c, b);
+      fc.property(fc.integer(), fc.integer(), (a, b) => {
+        console.log(a, b);
+        return add(a, b) === add(b, a);
+      })
+    );
+  });
+  it('should be associative', () => {
+    fc.assert(
+      fc.property(fc.integer(), fc.integer(), fc.integer(), (a, b, c) => {
+        console.log(a, b, c);
+        return add(a, add(b, c)) === add(add(a, b), c);
       })
     );
   });
