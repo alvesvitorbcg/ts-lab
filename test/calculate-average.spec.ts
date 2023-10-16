@@ -1,5 +1,5 @@
 import fc from 'fast-check';
-import { calculateAverage } from '../src';
+import { calculateAverage } from '../src/helpers';
 import { expect } from 'chai';
 
 describe('calculateAverage', () => {

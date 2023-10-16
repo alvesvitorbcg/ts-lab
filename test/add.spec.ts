@@ -1,8 +1,5 @@
 import fc from 'fast-check';
-
-function add(a: number, b: number) {
-  return a + b;
-}
+import { add } from '../src/helpers';
 
 describe('add', () => {
   it('should be commutative', () => {
