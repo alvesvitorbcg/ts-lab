@@ -1,0 +1,27 @@
+{
+  "name": "ts-lab",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "test": "tsc && mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.8",
+    "@types/mocha": "^10.0.2",
+    "@types/sinon": "^10.0.19",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "chai": "^4.3.10",
+    "eslint": "^8.51.0",
+    "fast-check": "^3.13.1",
+    "mocha": "^10.2.0",
+    "sinon": "^16.1.0",
+    "typescript": "^5.2.2"
+  },
+  "description": ""
+}
