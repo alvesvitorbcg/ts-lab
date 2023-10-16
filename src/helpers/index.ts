@@ -1,4 +1,4 @@
 import add from './add';
 import calculateAverage from './calculate-average';
-
-export { calculateAverage, add };
+import calculateInterests from './interests';
+export { calculateAverage, add, calculateInterests };
