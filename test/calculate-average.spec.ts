@@ -22,7 +22,7 @@ describe('calculateAverage', () => {
           fc.oneof(fc.integer(), fc.constant(null), fc.constant(undefined))
         ),
         (numbers) => {
-          const result = calculateAverage([...numbers]);
+          const result = calculateAverage(numbers);
           return typeof result === 'number';
         }
       )
@@ -35,7 +35,7 @@ describe('calculateAverage', () => {
           fc.oneof(fc.integer(), fc.constant(Infinity), fc.constant(-Infinity))
         ),
         (numbers) => {
-          const result = calculateAverage([...numbers]);
+          const result = calculateAverage(numbers);
           return typeof result === 'number';
         }
       )
